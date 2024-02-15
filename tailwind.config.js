@@ -7,6 +7,10 @@ export default {
       barlow: ['Barlow Condensed'],
     },
     extend: {
+      animation: {
+        fade: 'fadeIn 2s ease-in-out',
+        slideIn: 'slideIn 700ms ease-out',
+      },
       colors: {
         'main-violet': '#D0D6F9',
       },
@@ -20,7 +24,31 @@ export default {
       height: {
         screen: '100dvh',
       },
+      keyframes: {
+        slideIn: {
+          '0%': {
+            opacity: '0',
+            width: '0',
+            pointerEvents: 'none',
+          },
+        },
+        fadeIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'translate3d(-18%, 0, 0)',
+            pointerEvents: 'none',
+          },
+          '100%': { opacity: '1', pointerEvents: 'none' },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *');
+      addVariant('child', '& > *');
+      addVariant('child-hover', '& > *:hover');
+      addVariant('child-', '& > *:hover');
+    },
+  ],
 };

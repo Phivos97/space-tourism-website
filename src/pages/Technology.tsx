@@ -10,7 +10,7 @@ const Technology = ({ technology }) => {
   };
   console.log(tech);
   return (
-    <div className='flex flex-col items-center'>
+    <div className='child:animate-fade flex flex-col items-center'>
       <h1 className='text-white font-barlow tracking-[2.7px]'>
         <span className='opacity-30 mr-4'>03</span> SPACE LAUNCH 101
       </h1>
@@ -18,7 +18,13 @@ const Technology = ({ technology }) => {
         <ImageSlider images={images} />
       </div> */}
       <div className='pt-7'>
-        {tech && <img className='' src={`src/${tech.images.landscape}`} />}
+        {tech && (
+          <img
+            key={tech.images.landscape}
+            className='animate-fade'
+            src={`src/${tech.images.landscape}`}
+          />
+        )}
       </div>
       <section className=' flex flex-col items-center w-full px-7 pb-10'>
         {/* <hr className='border-[#383B4B] w-full  border-[0.1rem] rounded-full' /> */}
@@ -41,11 +47,17 @@ const Technology = ({ technology }) => {
           <h2 className='text-main-violet uppercase  font-barlow'>
             THE TERMINOLOGY...
           </h2>
-          <p className='text-white text-2xl uppercase  font-bellefair'>
+          <p
+            key={tech.name}
+            className='animate-fade text-white text-2xl uppercase  font-bellefair'
+          >
             {tech.name}
           </p>
         </div>
-        <p className='mt-4 leading-7 font-barlow text-main-violet'>
+        <p
+          key={tech.description}
+          className='animate-fade mt-4 leading-7 font-barlow text-main-violet'
+        >
           {tech.description}
         </p>
       </section>

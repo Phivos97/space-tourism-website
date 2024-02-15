@@ -30,7 +30,11 @@ const Crew = ({ crew }) => {
       </div> */}
       <div className='pt-7'>
         {crewMember && (
-          <img className=' w-auto h-64' src={`src/${crewMember.images.webp}`} />
+          <img
+            key={crewMember.images.webp}
+            className='animate-fade w-auto h-64'
+            src={`src/${crewMember.images.webp}`}
+          />
         )}
       </div>
       <section className=' flex flex-col items-center w-full px-7 pb-10'>
@@ -46,15 +50,24 @@ const Crew = ({ crew }) => {
             />
           ))}
         </div>
-        <div className='text-center mt-8'>
-          <h2 className='text-white uppercase opacity-50 font-bellefair'>
+        <div className='animate-fade text-center mt-8'>
+          <h2
+            key={crewMember.role}
+            className='animate-fade text-white uppercase opacity-50 font-bellefair'
+          >
             {crewMember.role}
           </h2>
-          <p className='text-white text-2xl uppercase  font-bellefair'>
+          <p
+            key={crewMember.name}
+            className='animate-fade text-white text-2xl uppercase  font-bellefair'
+          >
             {crewMember.name}
           </p>
         </div>
-        <p className='mt-4 leading-7 font-barlow text-main-violet'>
+        <p
+          key={crewMember.bio}
+          className='animate-fade mt-4 leading-7 font-barlow text-main-violet'
+        >
           {crewMember.bio}
         </p>
       </section>
