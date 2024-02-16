@@ -5,8 +5,8 @@ const MobileMenu = ({ toggleMenu, isOpen }) => {
   return (
     <nav
       className={` ${
-        !isOpen && 'z-50 transform-gpu will-change-transform translate-x-full '
-      } h-full  transition-transform  duration-700 ease-in-out p-8 flex flex-col fixed top-0 right-0 w-[65vw]  backdrop-blur-2xl bg-slate-300 bg-opacity-5 gap-12`}
+        !isOpen && 'transform-gpu will-change-transform translate-x-full '
+      } h-full z-50 transition-transform  duration-700 ease-in-out p-8 flex flex-col fixed top-0 right-0 w-[65vw]  backdrop-blur-2xl bg-slate-300 bg-opacity-5 gap-12`}
     >
       <Close toggleMenu={toggleMenu} />
       <menu>

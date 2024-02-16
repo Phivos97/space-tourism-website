@@ -3,13 +3,7 @@ import Burger from './Burger';
 import MobileMenu from './MobileMenu';
 import { useState } from 'react';
 
-const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleMenu() {
-    setIsOpen(() => !isOpen);
-  }
-
+const Nav = ({ toggleMenu, isOpen }) => {
   return (
     <div className='p-8 flex justify-between items-center'>
       <Logo />

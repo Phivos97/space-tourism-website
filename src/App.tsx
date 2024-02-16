@@ -14,11 +14,16 @@ import Technology from './pages/Technology';
 function App() {
   const [data, setData] = useState(jsonData);
   const { destinations, crew, technology } = data;
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsOpen(() => !isOpen);
+  }
   console.log(data);
   return (
     <BrowserRouter>
-      <Layout>
-        <MobileNav />
+      <Layout toggleMenu={toggleMenu} isOpen={isOpen}>
+        <MobileNav toggleMenu={toggleMenu} isOpen={isOpen} />
         <Wrapper>
           <Routes>
             <Route index path='home' element={<Home />} />

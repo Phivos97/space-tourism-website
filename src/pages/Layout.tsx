@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, toggleMenu, isOpen }) => {
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState('');
 
@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
     <>
       {currentPage.length > 1 && (
         <div
+          onClick={isOpen && toggleMenu}
           className={`bg-${currentPage}-mobile h-screen bg-cover overflow-scroll`}
         >
           {/* <h1 className='text-4xl text-black'>{currentPage}</h1> */}
